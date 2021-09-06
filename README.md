@@ -21,7 +21,9 @@ Django 3.2.5
 
 Download the project and go to public_gallery/settings.py
 
-In settings.py look for database configure the database of your choice, in mysql
+In settings.py look for database configure the database of your choice, 
+
+this project is configured with mysql
 
 ```
 
@@ -38,6 +40,21 @@ DATABASES = {
 
 
 ```
+By default, django already has sqlite pre-configured, if you prefer, remove the part and switch to sqlite
+
+```
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+
+
+```
+
 start your database.
 
 After that, open your terminal and navigate to the project root
