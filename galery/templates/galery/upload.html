@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Upload</title> 
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'galery/style.css' %}">
+    <script src="{% static 'galery/app.js'%}"></script>
+  </head>
+  <body>
+	<div class="center-fix">
+  		<div>
+     		<form class="form-view" action="{% url 'galery:uploading' %}" method="post" enctype="multipart/form-data">
+	 			{% csrf_token %}
+	    		<div  id="preview-img-area">
+	    			<img id="img" class="preview-image" src="{% static 'galery/img/cute.gif' %}">
+	    		</div>
+	    		<div id="upload-img-area">
+	       			<label class="img-upload" for="image_load">Upload image/gif</label>
+	       			<input hidden="true" onchange="previewImage()" type="file" required name="image" id="image_load">
+	    		</div>
+	   			<br>
+	   			<label>description</label>
+	   			<br>
+       			<textarea min="3" class="text-description" required name="description"></textarea><br>
+       			<label>your nick</label>
+       			<br>
+       			<input min="3" class="input-form"  class="" type="text" required name="name">
+       			<br>
+       			<input class="button-upload-form" type="submit" name="sub">
+     		</form>	
+  		</div>	
+	</div>
+	<h3 style="color: red">
+    	{{ message }}
+	</h3>
+	<footer>
+	  <a href="{% url 'galery:index' %}">Back to Index</a>	
+	</footer>
+  </body>
+</html>

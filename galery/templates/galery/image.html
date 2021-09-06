@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="utf-8">
+	<title>Image</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'galery/style.css' %}">
+  </head>
+  <body>
+	<div class="center-fix">
+	  <div>
+		<h1>Image View</h1>
+
+		<img src="{% static 'galery/img/'%}{{images.image_name}}"> 
+		<p id="description">
+			{{ images.description }}
+		</p>
+		<h5>
+			by: {{ images.name_user }}
+		</h5>
+	  </div>	
+	</div>
+    <footer>
+       <a href="{% url 'galery:index' %}">Back to Index</a>	
+    </footer>
+  </body>
+</html>
