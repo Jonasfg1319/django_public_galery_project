@@ -62,7 +62,8 @@ After that, open your terminal and navigate to the project root
 run the following command
 
 ```
-python manage.py migrate
+ python manage.py makemigrations polls
+ python manage.py migrate
 ```
 
 this command will create all the tables needed to run the application in your database
