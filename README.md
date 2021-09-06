@@ -62,7 +62,7 @@ After that, open your terminal and navigate to the project root
 run the following command
 
 ```
- python manage.py makemigrations polls
+ python manage.py makemigrations galery
  python manage.py migrate
 ```
 
