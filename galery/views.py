@@ -11,7 +11,7 @@ class IndexView(generic.ListView):
 	context_object_name = "images_list"
 
 	def get_queryset(self):
-		return Images.objects.order_by('id').reverse()
+		return Images.objects.all()
  
 
 
