@@ -8,7 +8,7 @@ class Images(models.Model):
   description = models.CharField(max_length=200)
   name_user = models.CharField(max_length=200)
   file = models.FileField(upload_to='galery/static/galery/img/')
-  data = models.DateTimeField(auto_now=True)
+  date = models.DateTimeField(auto_now=True)
 
   def __str__(self):
        return f"image_name: {self.image_name} -- description: {self.description}"
@@ -27,5 +27,6 @@ class Images(models.Model):
           permission = True
           break
       return permission
+
   class Meta:
-    ordering = ['-data']
+    ordering = ['-date']
