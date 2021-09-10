@@ -1,16 +1,6 @@
-{% load static %}
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Public Galery</title> 
-    <link rel="stylesheet" type="text/css" href="{% static 'galery/style.css' %}">
-  </head>
-  <body>
-    
-    <header class="header center-fix">
-	     <h2>Public Galery</h2>
-    </header>
-    
+{% extends 'galery/layout.html' %}  
+  {% block content %}
+   {% load static %}
     <div class="center-fix">
 	     <img class="img-index" src="{% static 'galery/img/cute.gif' %}">
         <h1 class="title-index">Welcome Your public galery</h1>	
@@ -19,8 +9,8 @@
         </form>
     </div>
     <div class="container center-fix">
-        <div class="">
-          <div class=" center-fix">
+        <div class="row">
+          <div class=" center-fix col-md-4">
            {% for image in images_list %}
 	           <img class="img-db" src="{% static 'galery/img/'%}{{image.image_name}} ">
              <a href="{% url 'galery:image' image.id %}"> <h5> {{ image.description }}</h5></a>
@@ -33,6 +23,4 @@
           </div>	
         </div>
     </div>
-
-  </body>
-</html>
+  {% endblock %}

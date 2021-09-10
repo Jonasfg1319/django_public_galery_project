@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views import generic
 from django.http import HttpResponse, Http404, HttpResponseRedirect
+from django.views.generic.list import ListView
 from .models import Images
 from django.urls import reverse
 # Create your views here.
@@ -18,9 +19,10 @@ class IndexView(generic.ListView):
 class UploadView(generic.ListView):
    template_name = "galery/upload.html"
    context_object_name = ""
+   
 
    def get_queryset(self):
-	   pass
+	  	pass
 
 class ImageView(generic.DetailView):
 	model = Images
@@ -49,5 +51,3 @@ def uploadig_view(request):
 		          "galery/upload.html", 
 		          {"message": message}
 		          )
-
-

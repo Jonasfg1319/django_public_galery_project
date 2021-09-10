@@ -55,7 +55,9 @@ ROOT_URLCONF = 'public_galery.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            "galery/header.html"
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
