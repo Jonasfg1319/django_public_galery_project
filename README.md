@@ -40,6 +40,8 @@ DATABASES = {
 
 
 ```
+it may be necessary to install the mysql client, if it is, just install it through pip
+
 By default, django already has sqlite pre-configured, if you prefer, remove the part and switch to sqlite
 
 ```
