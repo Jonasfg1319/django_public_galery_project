@@ -9,7 +9,9 @@
         </form>
     </div>
     <div class="container center-fix">
-        <div class="row">
+      <h3>Images</h3>
+      <hr>  
+      <div class="row">
           <div class=" center-fix col-md-4">
            {% for image in images_list %}
 	           <img class="img-db" src="{% static 'galery/img/'%}{{image.image_name}} ">
@@ -17,9 +19,7 @@
 	           <p>by: {{ image.name_user }}</p>
 	           <p>name: {{ image.image_name }}</p>
 	         {% endfor %}
-           <h3>Images
-           <hr>
-           </h3>	
+          	
           </div>	
         </div>
     </div>
